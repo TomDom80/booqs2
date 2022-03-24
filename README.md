@@ -33,7 +33,7 @@ oczywiście należy podstawić odpowiednie wartości do zmiennych
 
 ## Uruchomienie:
 
-Gdy mamy gotowy plik z kluczami. W katalogu, w którym znajduje się plik ***docker-compose.yml*** 
+* Gdy mamy gotowy plik z kluczami. W katalogu, w którym znajduje się plik ***docker-compose.yml*** 
 wykonujemy następujące polecenia:
 
 ```
@@ -41,24 +41,30 @@ docker-compose build
 docker-compose up
 ```
 
-następnie wyświetlamy nazwę utworzonego obrazu docker za pomocą polecenia:
+* następnie wyświetlamy nazwę utworzonego obrazu docker za pomocą polecenia:
 
 ```
 docker ps 
 ```
 
-po czym uruchamiamy wiersz poleceń wewnątrz powłoki za pomocą:
+* po czym uruchamiamy wiersz poleceń wewnątrz powłoki za pomocą:
 
 ```
 docker exec -it [nazwa obrazu] /bin/sh
 ```
-teraz należy wykonać migracje:
+
+* teraz należy wykonać migracje:
 
 ```
 python manage.py makemigrations books
 python manage.py makemigrations 
 python manage.py migrate
+```
 
+* oraz:
+
+```
+python manage.py collectstatic
 ```
 
 #### ***RESTART***..., aplikacja powinna juz działać prawidłowo na odpowiednich portach wynikających z ustawień.
