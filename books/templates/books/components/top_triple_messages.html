@@ -1,0 +1,59 @@
+{% with recived_object=send_obj.message %}
+
+    {% if recived_object.green %}
+
+        <div class="row mx-2">
+            <div class="col-12">
+                <div class="alert alert-success" role="alert">
+                    {% if recived_object.green_title %}
+                    <h4 class="alert-heading">### {{ recived_object.green_title }} ###</h4>
+                    {% else %}
+                    <h4 class="alert-heading">### message: ###</h4>
+                    {% endif %}
+                    <hr>
+                    <p class="mb-0 text-break">{{ recived_object.green }}</p>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+
+    {% if recived_object.yellow %}
+
+        <div class="row mx-2">
+            <div class="col-12">
+                <div class="alert alert-warning" role="alert">
+                    {% if recived_object.yellow_title %}
+                    <h4 class="alert-heading">### {{ recived_object.yellow_title }} ###</h4>
+                    {% else %}
+                    <h4 class="alert-heading">### message: ###</h4>
+                    {% endif %}
+                    <hr>
+                    <p class="mb-0 text-break">{{ recived_object.yellow }}</p>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+
+    {% if recived_object.red %}
+
+        <div class="row mx-2">
+            <div class="col-12">
+                <div class="alert alert-danger" role="alert">
+                    {% if recived_object.red_title %}
+                    <h4 class="alert-heading">### {{ recived_object.red_title }} ###</h4>
+                    {% else %}
+                    <h4 class="alert-heading">### message: ###</h4>
+                    {% endif %}
+                    <hr>
+                    <p class="mb-0 text-break">{{ recived_object.red }}</p>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endwith %}

@@ -1,0 +1,72 @@
+    {% if book_list_objects %}
+
+    <table class="table table-hover align-middle text-center ">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th style="width: 5%" scope="col">Cover</th>
+            <th style="width: 30%" scope="col">Title</th>
+            <th style="width: 20%" scope="col">Authors</th>
+            <th scope="col">Pages</th>
+            <th style="width: 15%" scope="col">Pub Date</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Lng</th>
+            <th style="width: 5%" scope="col">edit</th>
+            <th style="width: 5%" scope="col">del</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in book_list_objects %}
+
+        {% if book.imported_already %}
+        {% if last_import == book.labels %}
+        <tr class="bg-danger">
+            {% else %}
+        <tr class="bg-secondary">
+            {% endif %}
+            {% else %}
+        <tr class="text-center">
+            {% endif %}
+            <td>{{ book.id }}</td>
+            <td><img class="border" style="height:70px;width:50px;"
+                     src="{{ book.cover_link }}"/></td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.authors.all|join:", " }}</td>
+            <td>{{ book.pages_qty }}</td>
+            <td>{{ book.pub_date }}</td>
+
+            <td>{{ book.isbn_nr }}</td>
+            <td>{{ book.pub_lang }}</td>
+
+            {% if book.imported_already %}
+            <td id="{{book.labels}}">
+                <img style="width:30px" class="" src="https://static.thenounproject.com/png/3094236-200.png">
+                {% if last_import == book.labels %}
+                <br>NEW
+                {% endif %}
+            </td>
+            {% else %}
+            <td>
+                <a href="{% url 'book_form' book.id %}" class="btn  btn-outline-warning btn-sm" tabindex="-1"
+                   role="button" aria-disabled="true">
+                    <img style="width:30px" src="https://static.thenounproject.com/png/3094236-200.png">
+                    <br>
+                    edit
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'book_delete' book.id %}" class="btn btn-outline-danger btn-sm" tabindex="-1"
+                   role="button" aria-disabled="true">
+                    <img style="width:30px" src="https://static.thenounproject.com/png/2103581-200.png">
+                    <br>
+                    del
+                </a>
+            </td>
+
+            {% endif %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}

@@ -1,0 +1,31 @@
+{% include "books/top.html" %}
+{% include "books/menu.html" %}
+<div class="container">
+
+    <h4 class="my-3">
+        Books 2.0 - is a test task.
+    </h4>
+    <h6 class="my-3">
+        All views were done without using JavaScript.
+    </h6>
+    <h5 class="my-2">
+        It is a book database with the ability to search
+        and import books from the google books database.
+
+    </h5>
+
+    {% for link in q_link %}
+    {% if '?' in link %}
+
+    <a href="/api/books/{{link}}" class="text-decoration-none">{{link}}</a> <br>
+    {% else %}
+    <hr class="">
+    <h6 class="my-5XX">
+        {{link}}
+    </h6>
+
+    {% endif %}
+    {% endfor %}
+
+</div>
+{% include "books/bottom.html" %}

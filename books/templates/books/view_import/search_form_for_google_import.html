@@ -1,0 +1,39 @@
+<div class=" ">
+
+    <form action="{% url 'import_from_google' %}" method="GET">
+        <div class="row g-2">
+
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="query"
+                           id="b_query" placeholder="" value="{{send_obj.b_query}}">
+                    <label for="b_query">Search in all Parameters</label>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="title"
+                           id="b_title" placeholder="" value="{{send_obj.b_title}}">
+                    <label for="b_title">Search in Titles</label>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="author"
+                           id="b_author" placeholder="" value="{{send_obj.b_author}}">
+                    <label for="b_author">Search in Authors</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-2 mt-2 mb-5 ms-5 float-end">
+            <div class="form-floating ">
+                <button type="submit" class="btn btn-primary" value="">Search</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,16 @@
+
+{% if err_message %}
+
+<div class="alert alert-danger" role="alert">
+
+    <h4 class="alert-heading">### ERROR: ###</h4>
+
+    <p class="text-break">{{ err_message }}</p>
+
+    <hr>
+
+    <p class="mb-0 text-break">{{ except_message }}</p>
+
+</div>
+
+{% endif %}

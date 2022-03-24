@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  web:
+    image: dj_boox
+    build: ./
+    command: [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+      - ./static:/usr/src/app/static
+      - ./media:/usr/src/app/media
+    restart: unless-stopped
+    networks:
+      default:
+        aliases:
+          - expenses
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=expenses
+      - POSTGRES_USER=expenses
+      - POSTGRES_PASSWORD=DANub4rH7jx8jgDpsUNSVrQk
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      default:
+        aliases:
+          - postgres

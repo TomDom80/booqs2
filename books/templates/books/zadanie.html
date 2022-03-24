@@ -1,0 +1,77 @@
+{% include "books/top.html" %}
+{% include "books/menu.html" %}
+<div class="container">
+    <h1>
+        Lista książek
+    </h1>
+    <p>
+        Z wykorzystaniem dowolnego frameworka dostępnego dla języka Python (np. Django lub Flask) stwórz aplikację do
+        zarządzania zbiorem książek. Aplikacja powinna pozwalać na ręczne dodawanie/edycję/usuwanie książek jak i ich
+        importowanie korzystając z publicznie dostępnego API Google
+        (https://www.googleapis.com/books/v1/volumes?q=Hobbit). Do
+        warstwy wizualnej, można wykorzystać bibliotekę Bootstrap.
+    </p>
+
+    <h3>
+        ###Część 1:
+    </h3>
+
+    <p>
+        Zamodeluj obiekty bazodanowe tak by zawierały pola: tytuł, autor, data publikacji, numer ISBN, liczba stron,
+        link do
+        okładki i język publikacji.
+    </p>
+    <h5>
+        Stwórz 2 widoki:
+    </h5>
+    <p>
+        Widok listy wszystkich znajdujących się w bazie książek - z możliwością wyszukiwania po tytule, autorze i języku
+        oraz
+        zakresie dat publikacji (od - do), lista ma zawierać wszystkie informacje z modelu wyświetlone w czytelny sposób
+        (np. w
+        tabelce).
+    </p>
+
+    <p>
+        Widok z formularzem pozwalającym na ręczne dodawanie/edycję książek wraz z wyświetlaniem błędów walidacji
+    </p>
+    <h3>
+        #Część 2:
+    </h3>
+
+    <p>
+        Stwórz widok który pozwoli na import książek według słów kluczowych z
+        API: https://developers.google.com/books/docs/v1/using#WorkingVolumes
+        wpisy tych książek muszą znaleźć się w bazie danych, która została stworzona w pierwszej części tego zadania.
+    </p>
+    <h3>
+        #Część 3:
+    </h3>
+
+    <p>
+        Utwórz widoki REST API, które będzie posiadało listę książek z wyszukiwaniem i filtrowaniem przy użyciu query
+        strings,
+        jak w punkcie 2.a. z części pierwszej
+    </p>
+    <h3>
+        #Część 4:
+    </h3>
+    <p>
+        Postaw aplikację na publicznie dostępnym serwerze - darmowe Heroku jest jedną z opcji
+    </p>
+    <h3>
+        #Część 5:
+    </h3>
+    <p>
+        Napisz testy jednostkowe oraz sprawdź kod pod względem standardów PEP8.
+    </p>
+    <p>
+        Kod musi być napisany zgodnie ze standardami PEP8 oraz posiadać testy jednostkowe. Przy odsyłaniu zadania,
+        prosimy o
+        udostępnienie adresu www na którym jest dostępna aplikacja oraz o adres do publicznego repozytorium, tak aby
+        nasi
+        rekruterzy techniczni byli w stanie zajrzeć w kod.
+    </p>
+</div>
+
+{% include "books/bottom.html" %}

@@ -1,0 +1,12 @@
+{% include "books/top.html" %}
+{% include "books/menu.html" %}
+
+<div class="container pt-3">
+
+    {% include "books/components/top_triple_messages.html" %}
+
+    {{created_table | safe}}
+
+</div>
+
+{% include "books/bottom.html" %}

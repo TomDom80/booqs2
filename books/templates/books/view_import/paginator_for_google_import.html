@@ -1,0 +1,61 @@
+{% if send_obj.api_query %}
+
+<div class=" row   mt-3 mb-5 ">
+
+    <div class="col-2 ">
+        <a href="{% url 'import_from_google' %}" class="btn btn-secondary">Clean&nbsp;Results</a>
+    </div>
+
+    <div class="col-2 ">
+        <form action="{% url 'import_from_google' %}" method="GET">
+            <input type="hidden" class="form-control" name="send_obj_json" value="{{send_obj_json}}">
+            {% if send_obj.show_all %}
+            <button type="submit" class="btn btn btn-warning">Hide&nbsp;not&nbsp;Valid</button>
+            {% else %}
+            <input type="hidden" value=False class="form-control" name="to_show_all" value=True>
+            <button type="submit" class="btn btn-outline-warning">Show&nbsp;not&nbsp;Valid</button>
+            {% endif %}
+        </form>
+
+    </div>
+    <div class="col-1 ">
+        <form action="{% url 'import_from_google' %}" method="GET">
+            {% if send_obj.show_all %}
+            <input type="hidden" value=False class="form-control" name="to_show_all" lue=True>
+            {%endif%}
+            <input type="hidden" class="form-control" name="send_obj_json" value="{{send_obj_json}}">
+            <input type="hidden" class="form-control" name="search_minus" value="40">
+            <button type="submit" class="btn btn-secondary" value=""> <<</button>
+        </form>
+    </div>
+
+    <div class="col-6  Xpx-auto">
+        <div class=" row d-flex ">
+                <span class="mx-auto mt-2  ">
+                  Found {{send_obj.total_items}} books total.
+                    Range from {{send_obj.start_index}} to {{send_obj.end_index}}.
+                    <br>
+                    {% if not send_obj.show_all %}
+                        Visible is {{send_obj.positive}} and
+                        {{send_obj.negative}} was hidden.
+                    {% else %}
+                        All are visible {{send_obj.total_cnt}}
+                    {% endif %}
+                </span>
+        </div>
+    </div>
+
+    <div class="col-1">
+        <form action="{% url 'import_from_google' %}" method="GET">
+            {%if send_obj.show_all%}
+            <input type="hidden" value=False class="form-control" name="to_show_all" value=True>
+            {%endif%}
+            <input type="hidden" class="form-control" name="search_plus" value="40">
+            <input type="hidden" class="form-control" name="send_obj_json" value="{{send_obj_json}}">
+            <button type="submit" class="btn btn-danger" value=""> >></button>
+        </form>
+    </div>
+
+</div>
+{% endif %}
+

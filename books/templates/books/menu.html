@@ -1,0 +1,77 @@
+<div class="sticky-top">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+                <a class="navbar-brand ms-3" href="{% url 'index' %}">bOOq~</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'book_list' %}">
+                                Books DB </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'import_from_google' %}">
+                                Import</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'authors_list' %}">
+                                Authors</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                               href="{% url 'language_list' %}">Langs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                               href="/api/">API</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                               href="{% url 'book_form' %}">+Book</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                               href="{% url 'auth_lang_form' 'author' %}"> +Author</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                               href="{% url 'auth_lang_form' 'language' %}">+Lang</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'zadanie' %}">zadanie</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex me-2" action="{% url 'import_from_google' %}"
+                          method="GET">
+                        <input class="form-control me-2" type="search"
+                               placeholder="Search in api google"
+                               name="query" aria-label="Search">
+                        <button class="btn btn-secondary" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+

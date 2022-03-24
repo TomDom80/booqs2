@@ -1,0 +1,90 @@
+{% if send_obj.google_book_list %}
+{% load static %}
+<table class="table table-hover align-middle text-center ">
+    <thead>
+    <tr>
+        <th style="width: 5%" scope="col">#</th>
+        <th style="width: 5%" scope="col">Cover</th>
+        <th style="width: 30%" scope="col">Title</th>
+        <th style="width: 20%" scope="col">Authors</th>
+        <th scope="col">Pages</th>
+        <th style="width: 15%" scope="col">Pub Date</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Lng</th>
+        <th style="width: 10%" scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for book in send_obj.google_book_list %}
+
+    {% if book.is_valid or send_obj.show_all %}
+
+    {% if book.imported_already %}
+    {% if last_import == book.labels %}
+    <tr class="bg-success">
+        {% else %}
+    <tr class="bg-secondary">
+        {% endif %}
+        {% else %}
+        {% if book.is_valid %}
+    <tr class="text-center">
+        {% else %}
+    <tr class="bg-warning">
+        {% endif %}
+        {% endif %}
+
+        <td>{{ forloop.counter }}</td>
+        <td>
+            {% if book.cover_link %}
+            <img class="border-primary" style="height:50px;width:35px;" src="{{ book.cover_link }}"/>
+
+            {% else %}
+            <img class="border-primary" style="height:50px;width:35px;"
+                 src="{% static 'img/no_cover.png' %}"/>
+            {% endif %}
+        </td>
+
+        <td>{{ book.title }}</td>
+        <td>{{ book.authors_string }}</td>
+        <td>{{ book.pages_qty }}</td>
+        <td>{{ book.pub_date }}</td>
+        <td>{{ book.isbn_nr }}</td>
+        <td>{{ book.pub_lang }}</td>
+
+
+        {% if book.imported_already %}
+        <td id="{{book.labels}}">
+            <img style="width:30px" class="" src="https://static.thenounproject.com/png/1937587-200.png">
+            {% if last_import == book.labels %}
+            <br>NEW
+            {% endif %}
+        </td>
+        {% else %}
+        <td>
+            <form action="/import/#{{book.labels}}" method="GET">
+                <input type="hidden" class="form-control" name="save_book_obj" value="{{book.js_book}}">
+                <input type="hidden" class="form-control" name="last_import" value="{{book.labels}}">
+                <input type="hidden" class="form-control" name="send_obj_json" value="{{send_obj_json}}">
+                {% if book.is_valid %}
+                <button type="submit" class="btn btn-outline-success btn-sm" value="">
+                    <img style="width:30px" src="https://static.thenounproject.com/png/67546-200.png">
+                    <br>
+                    import
+                </button>
+                {% else %}
+                <div type="" class="text-danger fs-6 fw-bold">
+                    <i class="fa-solid fa-virus-slash fs-4 fw-bold"></i>
+                    <br>
+                    VALIDATION
+                </div>
+                {% endif %}
+            </form>
+        </td>
+        {% endif %}
+    </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}

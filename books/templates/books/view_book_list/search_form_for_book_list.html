@@ -1,0 +1,61 @@
+
+    <form action="{% url 'book_list' %}" method="GET">
+        <div class="row g-2">
+
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="title"
+                           id="b_title" placeholder="" value="{{b_title}}">
+                    <label for="b_title">Search in Titles</label>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="author"
+                           id="auth_id" placeholder="" value="{{b_author}}">
+                    <label for="auth_id">Search in Authors</label>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <div class="form-floating">
+                    <select class="form-select" aria-label="Default select example"
+                            id="lang_id" name="lang" value="{{b_lang}}">
+                        <option value=""></option>
+                        {% for lang in available_lang %}
+                        {% if lang.lang == b_lang %}
+                        <option selected value="{{b_lang}}">{{lang.lang}}</option>
+                        {% else %}
+                        <option value="{{lang.lang}}">{{lang.lang}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="lang_id" class="form-label">Lng</label>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-floating">
+                    <input type="date" class="form-control" id="start_date_id"
+                           name="start_date" value="{{bs_date}}">
+                    <label for="start_date_id" class="form-label">From:</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-floating">
+                    <input type="date" class="form-control" id="end_date_id"
+                           name="end_date" value="{{be_date}}">
+                    <label for="end_date_id" class="form-label">To:</label>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row g-2 mt-2 mb-5 ms-5 float-end">
+            <div class="form-floating ">
+                <button type="submit" class="btn btn-primary" value="">Search</button>
+            </div>
+        </div>
+    </form>
+
