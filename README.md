@@ -1,4 +1,5 @@
-# Books 2.0 - *Baza książek - Zadanie testowe* 
+# Books 2.0 
+### Baza książek - Zadanie testowe
 ## Wszystkie widoki zostały wkonane bez użycia ***JavaScript***
 
 Aby uruchomić aplikację należy:
