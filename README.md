@@ -64,7 +64,7 @@ python manage.py migrate
 #### ***RESTART***..., aplikacja powinna juz działać prawidłowo na odpowiednich portach wynikających z ustawień.
 
 
-* **Wszystkie polecenia razem**
+## **Wszystkie polecenia razem**
 ```
 mkdir booqs
 cd booqs
