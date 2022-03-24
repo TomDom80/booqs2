@@ -63,18 +63,3 @@ python manage.py migrate
 
 #### ***RESTART***..., aplikacja powinna juz działać prawidłowo na odpowiednich portach wynikających z ustawień.
 
-
-## **Wszystkie polecenia razem**
-```
-mkdir booqs
-cd booqs
-git clone https://github.com/TomDom80/booqs2.0.git .
-mv _env .env
-docker-compose build
-docker-compose up
-docker ps 
-docker exec -it booqs-web-1 /bin/sh
-python manage.py makemigrations books
-python manage.py makemigrations 
-python manage.py migrate
-```
