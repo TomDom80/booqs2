@@ -278,7 +278,6 @@ def index(request):
         "?isbn_nr__lt=1000000000",
         "?isbn_nr__range=1000000000,2000000000",
         "Search by MIX",
-        "?title__icontains=hobbit&pub_date__year=2009",
         "?title__icontains=hobbit&pub_date__year=2012",
         "?title__icontains=hobbit&pub_date__year=2013",
         "?title__icontains=hobbit&pub_date__lt=2012-01-01",
