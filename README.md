@@ -1,10 +1,11 @@
 # Books 2.0
 
 ## Baza książek - Zadanie testowe. 
-##### ( Widoki wykonano bez użycia ***JavaScript*** ).
+### Wszystkie widoki zostały wkonane bez użycia ***JavaScript***
 
 Aby uruchomić aplikację należy:
 * sklonować pliki do folderu aplikacji
+
 ```
 mkdir [app_folder_name]
 cd [app_folder_name]
@@ -61,5 +62,18 @@ python manage.py migrate
 
 ```
 
-#### po tym wszystkim aplikacja powinna działać prawidłowo na odpowiednich portach wynikających z ustawień.
+#### ***RESTART***..., aplikacja powinna juz działać prawidłowo na odpowiednich portach wynikających z ustawień.
 
+```
+mkdir booqs
+cd booqs
+git clone https://github.com/TomDom80/booqs2.0.git .
+mv _env .env
+docker-compose build
+docker-compose up
+docker ps 
+docker exec -it [nazwa obrazu] /bin/sh
+python manage.py makemigrations books
+python manage.py makemigrations 
+python manage.py migrate
+```
