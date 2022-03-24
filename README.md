@@ -63,6 +63,8 @@ python manage.py migrate
 
 #### ***RESTART***..., aplikacja powinna juz działać prawidłowo na odpowiednich portach wynikających z ustawień.
 
+
+* **Wszystkie polecenia razem**
 ```
 mkdir booqs
 cd booqs
@@ -71,7 +73,7 @@ mv _env .env
 docker-compose build
 docker-compose up
 docker ps 
-docker exec -it [nazwa obrazu] /bin/sh
+docker exec -it booqs-web-1 /bin/sh
 python manage.py makemigrations books
 python manage.py makemigrations 
 python manage.py migrate
