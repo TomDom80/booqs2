@@ -29,6 +29,7 @@ GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    '*',
     'localhost',
     '127.0.0.1',
     '178.79.159.132',
