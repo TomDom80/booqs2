@@ -50,7 +50,7 @@ docker ps
 * po czym uruchamiamy wiersz poleceń wewnątrz powłoki za pomocą:
 
 ```
-docker exec -it [nazwa obrazu] /bin/sh
+docker exec -it [nazwa obrazu] /bin/bash
 ```
 
 * teraz należy wykonać migracje:
