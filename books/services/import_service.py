@@ -307,12 +307,13 @@ def save_google_book_obj(book_obj):
                 return redirect("message_service", message=str(e))
 
         else:
-            try:
-                Author(name=name, surname=surname).save()
-                auth_instance = Author.objects.get(name=name, surname=surname)
-                auth_instance_arr.append(auth_instance)
-            except Exception as e:
-                return redirect("message_service", message=str(e))
+            if name:
+                try:
+                    Author(name=name, surname=surname).save()
+                    auth_instance = Author.objects.get(name=name, surname=surname)
+                    auth_instance_arr.append(auth_instance)
+                except Exception as e:
+                    return redirect("message_service", message=str(e))
 
     lang = book_obj.get("pub_lang")
     if PublicationLanguage.objects.filter(lang=lang).exists():
@@ -321,11 +322,12 @@ def save_google_book_obj(book_obj):
         except Exception as e:
             return redirect("message_service", message=str(e))
     else:
-        try:
-            PublicationLanguage(lang=lang).save()
-            lang_instance = PublicationLanguage.objects.get(lang=lang)
-        except Exception as e:
-            return redirect("message_service", message=str(e))
+        if lang:
+            try:
+                PublicationLanguage(lang=lang).save()
+                lang_instance = PublicationLanguage.objects.get(lang=lang)
+            except Exception as e:
+                return redirect("message_service", message=str(e))
 
     title = book_obj.get("title")
     isbn_nr = book_obj.get("isbn_nr")
