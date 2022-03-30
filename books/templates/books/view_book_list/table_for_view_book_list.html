@@ -36,7 +36,11 @@
             <td>{{ book.pub_date }}</td>
 
             <td>{{ book.isbn_nr }}</td>
+            {% if book.pub_lang %}
             <td>{{ book.pub_lang }}</td>
+            {% else %}
+            @!# to tu #!@
+            {% endif %}
 
             {% if book.imported_already %}
             <td id="{{book.labels}}">
