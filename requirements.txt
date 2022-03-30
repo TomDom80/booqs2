@@ -5,3 +5,4 @@ django-cors-headers==3.11.0
 pytest==7.0.1
 python-decouple==3.6
 django-filter==21.1
+psycopg2
