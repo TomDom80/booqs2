@@ -27,10 +27,8 @@ GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-DEBUG = True
 
 ALLOWED_HOSTS = [
-    # '*',
     'localhost',
     '127.0.0.1',
     '178.79.159.132',
@@ -142,7 +140,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    # '/var/www/static/',
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

@@ -34,3 +34,12 @@ services:
       default:
         aliases:
           - postgres
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./public:/app/public
+    ports:
+      - 8000:80
+    depends_on:
+      - web

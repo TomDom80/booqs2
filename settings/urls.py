@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-
 from books import views as books_views
 from books import viewsets as books_viewsets
 
 from books.services import services
+
+from django.conf.urls.static import static
+from django.conf import settings
 
 router = DefaultRouter()
 router.register(r'books', books_viewsets.BookViewSet)
@@ -53,5 +55,9 @@ urlpatterns = [
     path('message/<str:message>/', books_views.message_service, name='message_service'),
     path('message/<str:message>/<str:colour>/', books_views.message_service, name='message_service'),
 
-
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# urlpatterns = [] + static(settings
