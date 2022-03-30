@@ -6,11 +6,11 @@ ENV STATIC_URL ${STATIC_URL:-/static/}
 RUN apt-get update \
     && apt-get -y install postgresql gcc python3-dev musl-dev mc
 
-RUN pip3 install psycopg2-binary
-
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+RUN pip3 install --upgrade pip
+RUN pip3 install psycopg2-binary
 COPY requirements.txt /usr/src/app/
 RUN pip3 install --no-cache-dir -r requirements.txt
 
