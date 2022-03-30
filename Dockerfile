@@ -1,8 +1,5 @@
 FROM python:3.10-slim
 
-LABEL maintainer="Tom Dom<tomdom80@gmail.com>"
-LABEL description="Books 2.0"
-
 ARG STATIC_URL
 ENV STATIC_URL ${STATIC_URL:-/static/}
 
