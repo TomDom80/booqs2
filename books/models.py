@@ -2,7 +2,7 @@ from django.db import models
 
 
 class PublicationLanguage(models.Model):
-    lang = models.CharField(max_length=15, unique=True, blank=True, null=True)
+    lang = models.CharField(max_length=15, unique=True, blank=False, null=False)
 
     class Meta:
         ordering = ("lang",)
