@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '178.79.159.132',
+    'http://178.79.159.132',
+    'http://178.79.159.132/',
 ]
 
 # Application definition
