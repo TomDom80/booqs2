@@ -9,6 +9,7 @@ RUN apt-get update \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
 RUN pip3 install psycopg2-binary
 COPY requirements.txt /usr/src/app/
