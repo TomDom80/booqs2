@@ -297,7 +297,7 @@ def save_google_book_obj(book_obj):
             name = ' '.join(sep_auth[0:-1])
             surname = sep_auth[-1]
         elif len(sep_auth) >= 1:
-            surname = sep_auth[0]
+            name = sep_auth[0]
 
         if Author.objects.filter(name=name, surname=surname).exists():
             try:
