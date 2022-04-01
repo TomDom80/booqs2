@@ -16,6 +16,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . /usr/src/app
 
-EXPOSE 8000
+EXPOSE 2000
 
 RUN mkdir -p /usr/src/app/media /usr/src/app/static
