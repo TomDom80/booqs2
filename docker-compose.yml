@@ -22,8 +22,8 @@ services:
   db:
     image: postgres:latest
     ports:
-#      - "2002:5432"
-      - "5432:5432"
+      - "2002:2002"
+#      - "5432:5432"
     environment:
       - POSTGRES_DB=expenses
       - POSTGRES_USER=expenses

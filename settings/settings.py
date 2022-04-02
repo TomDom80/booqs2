@@ -103,8 +103,8 @@ DATABASES = {
         'USER': 'expenses',
         'PASSWORD': 'DANub4rH7jx8jgDpsUNSVrQk',
         'HOST': 'db',
-        # 'PORT': '2002',
-        'PORT': '5432',
+        'PORT': '2002',
+        # 'PORT': '5432',
     }
 }
 
