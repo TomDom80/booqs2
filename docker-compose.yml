@@ -26,6 +26,7 @@ services:
       - "2002:5432"
 #      - "5432:2002"
 #      - "5432:5432"
+#      - "5432:5432"
     environment:
       - POSTGRES_DB=expenses
       - POSTGRES_USER=expenses
