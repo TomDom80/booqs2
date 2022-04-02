@@ -30,6 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '*',
+    '212.71.248.53',
     'localhost',
     '127.0.0.1',
     '178.79.159.132',
