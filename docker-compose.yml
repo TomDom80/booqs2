@@ -13,7 +13,7 @@ services:
     networks:
       default:
         aliases:
-          - expenses
+          - web
     depends_on:
       - dbb2
     ports:
@@ -24,9 +24,9 @@ services:
     ports:
       - "2032:5432"
     environment:
-      - POSTGRES_DB=expenses
-      - POSTGRES_USER=expenses
-      - POSTGRES_PASSWORD=DANub4rH7jx8jgDpsUNSVrQk
+      - POSTGRES_DB=booqs20
+      - POSTGRES_USER=booqs20
+      - POSTGRES_PASSWORD=booqs20
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     restart: unless-stopped
