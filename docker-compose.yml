@@ -1,6 +1,7 @@
 version: '3.9'
 services:
   web:
+    container_name: b2_web
     image: book_2
     build: ./
     command: [ "python", "manage.py", "runserver", "0.0.0.0:2001" ]
@@ -20,6 +21,7 @@ services:
       - "2001:2001"
 
   dbb2:
+    container_name: b2_dbb2
     image: postgres:latest
     ports:
       - "2032:5432"
@@ -36,6 +38,7 @@ services:
           - dbb2
 
   nginx:
+    container_name: b2_ngix
     build: ./nginx
     volumes:
       - ./public:/app/public
