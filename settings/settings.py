@@ -103,7 +103,7 @@ DATABASES = {
         'NAME': 'booqs20',
         'USER': 'booqs20',
         'PASSWORD': 'booqs20',
-        'HOST': 'dbpsg',
+        'HOST': 'dbb2',
         # 'PORT': '2002',
         'PORT': '5432',
     }
