@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   web:
-    image: book_1
+    image: book_2
     build: ./
     command: [ "python", "manage.py", "runserver", "0.0.0.0:2001" ]
     working_dir: /usr/src/app
@@ -15,18 +15,14 @@ services:
         aliases:
           - expenses
     depends_on:
-      - db
+      - dbb2
     ports:
       - "2001:2001"
 
-  db:
+  dbb2:
     image: postgres:latest
     ports:
-#      - "2002:5432"
-#      - "2002:2002"
-#      - "5432:2002"
-#      - "5432:5432"
-      - "5432:5432"
+      - "2032:5432"
     environment:
       - POSTGRES_DB=expenses
       - POSTGRES_USER=expenses
@@ -37,7 +33,7 @@ services:
     networks:
       default:
         aliases:
-          - postgres
+          - dbb2
 
   nginx:
     build: ./nginx
